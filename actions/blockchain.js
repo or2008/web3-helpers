@@ -1,5 +1,13 @@
 const services = require('../services');
 const erc20Abi = require('../erc20-abi.json');
+const helpers = require('../helpers');
+
+async function loadBalance(currencyCode, address) {
+    if (currencyCode == 'ETH') return this.loadEthBalance(address);
+
+    const contractAddress = helpers.currency.getTokenContractAddress(currencyCode);
+    return this.loadTokenBalance(address, contractAddress);
+}
 
 async function loadEthBalance(address) {
     const web3 = services.web3.getInstance();
@@ -64,5 +72,6 @@ module.exports = {
     loadTokenBalance,
     loadTransactionCount,
     callContractMethod,
-    loadCurrentBlockTime
+    loadCurrentBlockTime,
+    loadBalance
 };
