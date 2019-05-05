@@ -1,6 +1,6 @@
 {
   "name": "web3-helpers",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "a lib with web3 helpers",
   "main": "index.js",
   "repository": {
