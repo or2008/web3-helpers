@@ -14,6 +14,9 @@
   "license": "ISC",
   "dependencies": {
     "decimal.js": "^10.1.1",
+    "ethereum-input-data-decoder": "^0.2.0",
+    "decimal.js": "^10.0.2",
+    "multi-blockchain-wallet": "0.0.59",
     "web3": "^1.0.0-beta.54"
   }
 }
