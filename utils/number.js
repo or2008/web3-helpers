@@ -1,4 +1,4 @@
-const web3Service = require('./services/web3');
+const web3Service = require('../services/web3');
 const Decimal = require('decimal.js');
 
 function toHex(value) {
