@@ -1,6 +1,6 @@
 {
   "name": "web3-helpers",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "a lib with web3 helpers",
   "main": "index.js",
   "repository": {
@@ -13,9 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "decimal.js": "^10.1.1",
-    "ethereum-input-data-decoder": "^0.2.0",
     "decimal.js": "^10.0.2",
+    "ethereum-input-data-decoder": "^0.2.0",
     "multi-blockchain-wallet": "0.0.59",
     "web3": "^1.0.0-beta.54"
   }
