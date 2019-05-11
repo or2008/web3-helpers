@@ -1,7 +1,7 @@
-const config = require('../config');
 const actions = require('../actions');
 
-const txHash = '0xc2feeda7f3723c515ed40b7b1b0a1f6f9954ccf30a1dd3c2dc0a215f19af07c2';
+const txHash = '0x31299e887af6dc4baa59c41269d76e370a15cd199e984764436f9eb58b17f74a';
 const privateKey = '0x';
+const gasPriceWei = 15000000000;
 
-actions.transaction.cancelPendingTx(txHash, privateKey);
+actions.transaction.cancelPendingTx(txHash, privateKey, gasPriceWei);

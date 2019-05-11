@@ -8,14 +8,15 @@
     "url": "https://github.com/or2008/web3-helpers"
   },
   "scripts": {
+    "mass-erc20-approve": "node ./scripts/mass-erc20-approve.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "decimal.js": "^10.0.2",
+    "decimal.js": "^10.2.0",
     "ethereum-input-data-decoder": "^0.2.0",
     "multi-blockchain-wallet": "0.0.59",
-    "web3": "^1.0.0-beta.54"
+    "web3": "^1.0.0-beta.55"
   }
 }

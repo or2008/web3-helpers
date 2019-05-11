@@ -27,10 +27,10 @@ exports.sendSignedTransaction = async (signedTx, onConfirmation, onReceipt) => {
     });
 };
 
-exports.cancelPendingTx = async (txHash, privateKey) => {
+exports.cancelPendingTx = async (txHash, privateKey, customGasPrice) => {
     const web3 = services.web3.getInstance();
     const tx = await web3.eth.getTransaction(txHash);
-    const gasPrice = Number(tx.gasPrice) + 1000000000;
+    const gasPrice = customGasPrice ? customGasPrice : Number(tx.gasPrice) + 1000000000;
     const rawTx = this.buildRawTx(tx.nonce, tx.from, 0, gasPrice, 21000);
 
     const signedTx = this.signTransaction(rawTx, privateKey);
