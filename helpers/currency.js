@@ -1,4 +1,4 @@
-const currencyDB = require('../db/currency');
+const currencyDB = require('../db/currency-db.json');
 const utils = require('../utils');
 
 function getByCurrencyCode(code) {
