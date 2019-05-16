@@ -63,7 +63,8 @@ function subscribeToContractPendingTxs(onData, onError) {
 }
 
 async function loadSafeGasPrice() {
-
+    const data = await services.fetch.get('https://ethgasstation.info/json/ethgasAPI.json');
+    return data.safeLow / 10;
 }
 
 module.exports = {
@@ -73,5 +74,6 @@ module.exports = {
     loadTransactionCount,
     callContractMethod,
     loadCurrentBlockTime,
-    loadBalance
+    loadBalance,
+    loadSafeGasPrice
 };
