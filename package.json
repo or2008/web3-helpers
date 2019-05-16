@@ -8,7 +8,6 @@
     "url": "https://github.com/or2008/web3-helpers"
   },
   "scripts": {
-    "mass-erc20-approve": "node ./scripts/mass-erc20-approve.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
