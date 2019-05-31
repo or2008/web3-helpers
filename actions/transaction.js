@@ -27,6 +27,12 @@ exports.sendSignedTransaction = async (signedTx, onConfirmation, onReceipt) => {
     });
 };
 
+exports.loadTx = async (txHash) => {
+    const web3 = services.web3.getInstance();
+    const tx = await web3.eth.getTransaction(txHash);
+    return tx;
+}
+
 exports.cancelPendingTx = async (txHash, privateKey, customGasPrice) => {
     const web3 = services.web3.getInstance();
     const tx = await web3.eth.getTransaction(txHash);
