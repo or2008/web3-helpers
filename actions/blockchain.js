@@ -48,7 +48,7 @@ async function callContractMethod(abi, contractAddress, methodName, ...args) {
     const web3 = services.web3.getInstance();
     const contract = new web3.eth.Contract(abi, contractAddress);
     const data = await contract.methods[methodName](...args).call();
-    return data.gte ? data.toString() : data;
+    return data.gte ? data.toString() : data; // TODO - use: web3.utils.isBN
 }
 
 function subscribeToContractPendingTxs(onData, onError) {
