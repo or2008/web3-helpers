@@ -1,7 +1,6 @@
 const { MultiBlockchainWallet } = require('multi-blockchain-wallet/dist/index.node');
 const services = require('../services');
 const utils = require('../utils');
-const globalHelpers = require('../helpers');
 
 exports.signTransaction = (rawTx, privateKey) => {
     return MultiBlockchainWallet.signTransaction('ethereum', rawTx, privateKey);
@@ -27,11 +26,11 @@ exports.sendSignedTransaction = async (signedTx, onConfirmation, onReceipt) => {
     });
 };
 
-exports.loadTx = async (txHash) => {
+exports.loadTx = async txHash => {
     const web3 = services.web3.getInstance();
     const tx = await web3.eth.getTransaction(txHash);
     return tx;
-}
+};
 
 exports.cancelPendingTx = async (txHash, privateKey, customGasPrice) => {
     const web3 = services.web3.getInstance();
@@ -51,8 +50,7 @@ exports.buildContractMethodTxData = (contractAbi, txMethod, ...args) => {
     return data;
 };
 
-exports.buildRawTx = (txCount, toAddress, ethAmount, gasPrice, gas, data = null) => {
-    const ethAmountWei = globalHelpers.formatToWei('ETH', ethAmount);
+exports.buildRawTx = (txCount, toAddress, ethAmountWei, gasPrice, gas, data = null) => {
     const txParams = {
         nonce: utils.number.toHex(txCount),
         gasPrice: utils.number.toHex(gasPrice),
