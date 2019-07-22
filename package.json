@@ -2,29 +2,17 @@
   "name": "web3-helpers",
   "version": "0.0.20",
   "description": "common web3 helpers and utilities",
-  "main": "index.js",
-  "dependencies": {
-    "bignumber.js": "^9.0.0",
-    "web3": "^1.0.0-beta.55"
-  },
-  "devDependencies": {
-    "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.7",
-    "@typescript-eslint/eslint-plugin": "^1.12.0",
-    "@typescript-eslint/parser": "^1.12.0",
-    "chai": "^4.2.0",
-    "eslint": "5.x",
-    "mocha": "^6.2.0",
-    "ts-node": "^8.3.0",
-    "typescript": "^3.5.3"
-  },
   "scripts": {
+    "prepublish": "npm run tsc",
+    "tsc": "tsc",
     "test": "mocha -r ts-node/register tests/**/*.test.ts"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/or2008/web3-helpers.git"
   },
+  "main": "dist/index.js",
+  "types": "index.d.ts",
   "keywords": [
     "web3",
     "blockchain",
@@ -35,5 +23,24 @@
   "bugs": {
     "url": "https://github.com/or2008/web3-helpers/issues"
   },
-  "homepage": "https://github.com/or2008/web3-helpers#readme"
+  "homepage": "https://github.com/or2008/web3-helpers#readme",
+  "dependencies": {
+    "bignumber.js": "^9.0.0",
+    "ethereum-input-data-decoder": "^0.2.0",
+    "multi-blockchain-wallet": "0.0.61",
+    "node-fetch": "^2.6.0",
+    "web3": "^1.0.0-beta.55"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "@types/node-fetch": "^2.3.7",
+    "@typescript-eslint/eslint-plugin": "^1.12.0",
+    "@typescript-eslint/parser": "^1.12.0",
+    "chai": "^4.2.0",
+    "eslint": "5.x",
+    "mocha": "^6.2.0",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  }
 }
