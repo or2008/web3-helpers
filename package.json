@@ -12,7 +12,7 @@
     "url": "git+https://github.com/or2008/web3-helpers.git"
   },
   "main": "dist/index.js",
-  "types": "index.d.ts",
+  "types": "dist/index.d.ts",
   "keywords": [
     "web3",
     "blockchain",
