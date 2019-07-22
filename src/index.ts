@@ -13,7 +13,7 @@ export class Web3Helpers {
         return services.web3.getInstance();
     }
 
-    public static utils = utils;
-    public static actions = actions;
-    public static helpers = helpers;
+    public utils = utils;
+    public actions = actions;
+    public helpers = helpers;
 }
