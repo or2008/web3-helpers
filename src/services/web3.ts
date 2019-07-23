@@ -3,7 +3,7 @@ import { WebsocketProvider, HttpProvider, IpcProvider } from 'web3-providers';
 
 let web3: Web3;
 let provider: WebsocketProvider | HttpProvider | IpcProvider;
-export async function init(providerPath: string): Promise<Web3> {
+export function init(providerPath: string): Web3 {
     provider = new Web3.providers.WebsocketProvider(providerPath);
     web3 = new Web3(provider);
     return web3;
