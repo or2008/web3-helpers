@@ -2,7 +2,7 @@ import * as services from '../services';
 import { Block, Subscription } from 'web3-eth';
 import erc20Abi from '../abi/erc20-abi.json';
 import { AbiItem } from 'web3-utils';
-
+import { Transaction } from 'web3-core';
 
 export async function loadBalance(contractAddress: string | 'ETH', address: string): Promise<string>   {
     if (contractAddress == 'ETH') return this.loadEthBalance(address);
@@ -17,6 +17,11 @@ export async function loadEthBalance(address: string): Promise<string>  {
 export async function loadTransactionCount(address: string, defaultBlock: number | string): Promise<number> {
     const web3 = services.web3.getInstance();
     return web3.eth.getTransactionCount(address, defaultBlock);
+}
+
+export async function loadTransaction(txHash: string): Promise<Transaction> {
+    const web3 = services.web3.getInstance();
+    return web3.eth.getTransaction(txHash);
 }
 
 export async function loadCurrentBlockNumber(): Promise<number> {
