@@ -1,21 +1,11 @@
 import * as MultiBlockchainWallet from 'multi-blockchain-wallet/dist/index.node.js';
 import { IEthereumTransaction } from 'multi-blockchain-wallet/dist/plugins/ethereum';
 import * as services from '../services';
-import { TransactionReceipt, PromiEvent, Transaction, TransactionConfig } from 'web3-core';
+import { TransactionReceipt, TransactionConfig } from 'web3-core';
 import { AbiItem } from 'web3-utils';
 
 export function signTransaction(rawTx: IEthereumTransaction, privateKey: string): string {
     return MultiBlockchainWallet.signTransaction('ethereum', rawTx, privateKey);
-};
-
-export function sendSignedTransaction(signedTx: string): PromiEvent<TransactionReceipt> {
-    const web3 = services.web3.getInstance();
-    return web3.eth.sendSignedTransaction(signedTx);
-}
-
-export async function loadTx(txHash: string): Promise<Transaction> {
-    const web3 = services.web3.getInstance();
-    return web3.eth.getTransaction(txHash);
 };
 
 export async function cancelPendingTx(txHash: string, privateKey: string, customGasPriceAddition = 1000000000): Promise<TransactionReceipt> {

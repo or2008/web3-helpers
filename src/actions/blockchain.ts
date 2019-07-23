@@ -2,26 +2,19 @@ import * as services from '../services';
 import { Block, Subscription } from 'web3-eth';
 import erc20Abi from '../abi/erc20-abi.json';
 import { AbiItem } from 'web3-utils';
-import { Transaction } from 'web3-core';
 
 export async function loadBalance(contractAddress: string | 'ETH', address: string): Promise<string>   {
     if (contractAddress == 'ETH') return this.loadEthBalance(address);
     return this.loadTokenBalance(address, contractAddress);
 }
 
+export async function loadTokenBalance(address, contractAddress): Promise<string> {
+    return this.callContractMethod(erc20Abi, contractAddress, 'balanceOf', address);
+}
+
 export async function loadEthBalance(address: string): Promise<string>  {
     const web3 = services.web3.getInstance();
     return web3.eth.getBalance(address);
-}
-
-export async function loadTransactionCount(address: string, defaultBlock: number | string): Promise<number> {
-    const web3 = services.web3.getInstance();
-    return web3.eth.getTransactionCount(address, defaultBlock);
-}
-
-export async function loadTransaction(txHash: string): Promise<Transaction> {
-    const web3 = services.web3.getInstance();
-    return web3.eth.getTransaction(txHash);
 }
 
 export async function loadCurrentBlockNumber(): Promise<number> {
@@ -40,20 +33,11 @@ export async function loadCurrentBlockTime(): Promise<string | number> {
     return currentBlock.timestamp;
 }
 
-export async function loadTokenBalance(address, contractAddress): Promise<string> {
-    return this.callContractMethod(erc20Abi, contractAddress, 'balanceOf', address);
-}
-
 export async function callContractMethod(abi: AbiItem[] | AbiItem, methodName: string, contractAddress?: string, ...args): Promise<string> {
     const web3 = services.web3.getInstance();
     const contract = new web3.eth.Contract(abi, contractAddress);
     const data = await contract.methods[methodName](...args).call();
     return web3.utils.isBN(data) ? data.toFixed() : data;
-}
-
-export function subscribeToPendingTxs(): Subscription<string> {
-    const web3 = services.web3.getInstance();
-    return web3.eth.subscribe('pendingTransactions');
 }
 
 export interface EthgasAPIResponse {
