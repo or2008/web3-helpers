@@ -17,3 +17,7 @@ export class Web3Helpers {
     public actions = actions;
     public helpers = helpers;
 }
+
+export {
+    Web3
+}
