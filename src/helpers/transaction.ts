@@ -5,7 +5,7 @@ import { Transaction } from 'web3-core';
 export interface DecodedTxInput {
     method: string;
     types: string[];
-    inputs: string[] | object[];
+    inputs: string[];
     names: string[];
 }
 export function decodeTxInputData(txInput: string, abi: AbiItem | AbiItem[]): DecodedTxInput {
