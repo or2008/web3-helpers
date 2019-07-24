@@ -20,3 +20,7 @@ export function calculateTxFeeCost(tx: Transaction): number {
 export function getFunctionName(tx: Transaction, abi: AbiItem | AbiItem[]): string {
     return decodeTxInputData(tx.input, abi).method;
 }
+
+export function getDecodedInputs(tx: Transaction, abi: AbiItem | AbiItem[]): string[] | object[] {
+    return decodeTxInputData(tx.input, abi).inputs;
+}
