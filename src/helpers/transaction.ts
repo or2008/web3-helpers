@@ -4,6 +4,9 @@ import { Transaction } from 'web3-core';
 
 export interface DecodedTxInput {
     method: string;
+    types: string[];
+    inputs: string[] | object[];
+    names: string[];
 }
 export function decodeTxInputData(txInput: string, abi: AbiItem | AbiItem[]): DecodedTxInput {
     const decoder = new InputDataDecoder(abi);
