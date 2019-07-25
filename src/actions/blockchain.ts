@@ -1,5 +1,5 @@
 import * as services from '../services';
-import { Block, Subscription } from 'web3-eth';
+import { Block } from 'web3-eth';
 import erc20Abi from '../abi/erc20-abi.json';
 import { AbiItem } from 'web3-utils';
 
@@ -9,7 +9,7 @@ export async function loadBalance(contractAddress: string | 'ETH', address: stri
 }
 
 export async function loadTokenBalance(address, contractAddress): Promise<string> {
-    return this.callContractMethod(erc20Abi, contractAddress, 'balanceOf', address);
+    return this.callContractMethod(erc20Abi, 'balanceOf', contractAddress, address);
 }
 
 export async function loadEthBalance(address: string): Promise<string>  {
