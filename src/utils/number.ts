@@ -36,22 +36,22 @@ export function toFixed(n1: BigNumber.Value, decimals = 0): string {
     return n1.toFixed(decimals);
 }
 
-export function isLessThan(n1: BigNumber.Value, n2: BigNumber.Value): string {
+export function isLessThan(n1: BigNumber.Value, n2: BigNumber.Value): boolean {
     n1 = new BigNumber(n1);
-    return n1.isLessThan(n2).toFixed();
+    return n1.isLessThan(n2);
 }
 
-export function isLessThanOrEqualTo(n1: BigNumber.Value, n2: BigNumber.Value): string {
+export function isLessThanOrEqualTo(n1: BigNumber.Value, n2: BigNumber.Value): boolean {
     n1 = new BigNumber(n1);
-    return n1.isLessThanOrEqualTo(n2).toFixed();
+    return n1.isLessThanOrEqualTo(n2);
 }
 
-export function isGreaterThan(n1: BigNumber.Value, n2: BigNumber.Value): string {
+export function isGreaterThan(n1: BigNumber.Value, n2: BigNumber.Value): boolean {
     n1 = new BigNumber(n1);
-    return n1.isGreaterThan(n2).toFixed();
+    return n1.isGreaterThan(n2);
 }
 
-export function isGreaterThanOrEqualTo(n1: BigNumber.Value, n2: BigNumber.Value): string {
+export function isGreaterThanOrEqualTo(n1: BigNumber.Value, n2: BigNumber.Value): boolean {
     n1 = new BigNumber(n1);
-    return n1.isLessThanOrEqualTo(n2).toFixed();
+    return n1.isLessThanOrEqualTo(n2);
 }
