@@ -31,7 +31,27 @@ export function mul(n1: BigNumber.Value, n2: BigNumber.Value): string {
     return n1.times(n2).toFixed();
 }
 
-export function toFixed(n1: BigNumber.Value , decimals = 0): string {
+export function toFixed(n1: BigNumber.Value, decimals = 0): string {
     n1 = new BigNumber(n1);
     return n1.toFixed(decimals);
+}
+
+export function isLessThan(n1: BigNumber.Value, n2: BigNumber.Value): string {
+    n1 = new BigNumber(n1);
+    return n1.isLessThan(n2).toFixed();
+}
+
+export function isLessThanOrEqualTo(n1: BigNumber.Value, n2: BigNumber.Value): string {
+    n1 = new BigNumber(n1);
+    return n1.isLessThanOrEqualTo(n2).toFixed();
+}
+
+export function isGreaterThan(n1: BigNumber.Value, n2: BigNumber.Value): string {
+    n1 = new BigNumber(n1);
+    return n1.isGreaterThan(n2).toFixed();
+}
+
+export function isGreaterThanOrEqualTo(n1: BigNumber.Value, n2: BigNumber.Value): string {
+    n1 = new BigNumber(n1);
+    return n1.isLessThanOrEqualTo(n2).toFixed();
 }
