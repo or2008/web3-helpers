@@ -55,3 +55,11 @@ export function isGreaterThanOrEqualTo(n1: BigNumber.Value, n2: BigNumber.Value)
     n1 = new BigNumber(n1);
     return n1.isLessThanOrEqualTo(n2);
 }
+
+export function min(n1: BigNumber.Value, n2: BigNumber.Value): string {
+    return BigNumber.minimum(n1, n2).toFixed();
+}
+
+export function max(n1: BigNumber.Value, n2: BigNumber.Value): string {
+    return BigNumber.maximum(n1, n2).toFixed();
+}
