@@ -56,10 +56,10 @@ export function isGreaterThanOrEqualTo(n1: BigNumber.Value, n2: BigNumber.Value)
     return n1.isLessThanOrEqualTo(n2);
 }
 
-export function min(n1: BigNumber.Value, n2: BigNumber.Value): string {
-    return BigNumber.minimum(n1, n2).toFixed();
+export function min(...n: BigNumber.Value[]): string {
+    return BigNumber.minimum(...n).toFixed();
 }
 
-export function max(n1: BigNumber.Value, n2: BigNumber.Value): string {
-    return BigNumber.maximum(n1, n2).toFixed();
+export function max(...n: BigNumber.Value[]): string {
+    return BigNumber.maximum(...n).toFixed();
 }
