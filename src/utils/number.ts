@@ -31,7 +31,7 @@ export function mul(n1: BigNumber.Value, n2: BigNumber.Value): string {
     return n1.times(n2).toFixed(0, 1);
 }
 
-export function toFixed(n1: BigNumber.Value, decimals = 0, rm: number): string {
+export function toFixed(n1: BigNumber.Value, decimals = 0, rm?: number): string {
     n1 = new BigNumber(n1);
     return n1.toFixed(decimals, rm);
 }
