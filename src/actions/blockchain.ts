@@ -52,7 +52,6 @@ export interface EthgasAPIResponse {
     avgWait: number;
     fastWait: number;
     fastestWait: number;
-
 }
 
 export async function loadGasPriceMetrics(): Promise<EthgasAPIResponse> {
