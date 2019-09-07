@@ -8,8 +8,8 @@ export async function loadBalance(contractAddress: string | 'ETH', address: stri
     return this.loadTokenBalance(address, contractAddress);
 }
 
-export async function loadTokenBalance(address, contractAddress): Promise<string> {
-    return this.callContractMethod(erc20Abi, 'balanceOf', contractAddress, address);
+export async function loadTokenBalance(address, tokenContractAddress): Promise<string> {
+    return this.callContractMethod(erc20Abi, 'balanceOf', tokenContractAddress, address);
 }
 
 export async function loadEthBalance(address: string): Promise<string>  {

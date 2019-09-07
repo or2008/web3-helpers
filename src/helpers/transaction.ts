@@ -21,6 +21,6 @@ export function getFunctionName(tx: Transaction, abi: AbiItem | AbiItem[]): stri
     return decodeTxInputData(tx.input, abi).method;
 }
 
-export function getDecodedInputs(tx: Transaction, abi: AbiItem | AbiItem[]): string[]{
+export function getDecodedInputs(tx: Transaction, abi: AbiItem | AbiItem[]): any[]{
     return decodeTxInputData(tx.input, abi).inputs;
 }
