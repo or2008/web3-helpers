@@ -1,6 +1,6 @@
 {
   "name": "web3-helpers",
-  "version": "0.0.44",
+  "version": "0.0.45",
   "description": "common web3 helpers and utilities",
   "scripts": {
     "prepublish": "npm run tsc",
