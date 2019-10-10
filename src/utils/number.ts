@@ -63,3 +63,7 @@ export function min(...n: BigNumber.Value[]): string {
 export function max(...n: BigNumber.Value[]): string {
     return BigNumber.maximum(...n).toFixed(0, 1);
 }
+
+export function abs(n): string {
+    return new BigNumber(n).abs().toString();
+}
