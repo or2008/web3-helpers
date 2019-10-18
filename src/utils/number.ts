@@ -53,7 +53,7 @@ export function isGreaterThan(n1: BigNumber.Value, n2: BigNumber.Value): boolean
 
 export function isGreaterThanOrEqualTo(n1: BigNumber.Value, n2: BigNumber.Value): boolean {
     n1 = new BigNumber(n1);
-    return n1.isLessThanOrEqualTo(n2);
+    return n1.isGreaterThanOrEqualTo(n2);
 }
 
 export function min(...n: BigNumber.Value[]): string {
@@ -64,6 +64,6 @@ export function max(...n: BigNumber.Value[]): string {
     return BigNumber.maximum(...n).toFixed(0, 1);
 }
 
-export function abs(n): string {
+export function abs(n: BigNumber.Value): string {
     return new BigNumber(n).abs().toString();
 }
